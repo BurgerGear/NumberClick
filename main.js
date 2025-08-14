@@ -1,6 +1,18 @@
-
-function btnclick()
+var clicks = 0;
+var saveData = {
+	clicks: clicks
+}
+function save(){
+	saveData.clicks = clicks;
+	localStorage.setItem("save",JSON.stringify(saveData));
+}
+function load(){
+	var save = JSON.parse(localStorage.getItem("save"));
+	if (typeof save.clicks !== "undefined") clicks = save.clicks;
+	document.getElementById("counter").textContent = clicks;
+}
+function btnclick(number)
 {
-var counter = document.getElementById("counter");
-counter.textContent = parseInt(counter.textContent) + 1;
+clicks = clicks + number
+document.getElementById("counter").textContent = clicks;
 }

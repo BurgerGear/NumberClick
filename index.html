@@ -4,11 +4,12 @@
 	<link rel="stylesheet" type="text/css" href="interface.css" />
 	</head>
 	
-<body>
+<body onload="load()">
 
 	<h2>Number: <span id="counter">0</span></h2>
-	<button type="button" onclick="btnclick()">+1</button>
-
+	<button type="button" onclick="btnclick(1)">+1</button>
+	<button type="button" onclick="save()">Save</button>
+	
 	<script type="text/javascript" src="globals.js"></script>
 	<script type="text/javascript" src="main.js"></script>
 </body>
